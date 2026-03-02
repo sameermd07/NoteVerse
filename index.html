@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noteflow • Modern Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-pen-fancy"></i>
+                    <span>Noteflow</span>
+                </div>
+                <button class="new-section-btn" onclick="addSection()">
+                    <i class="fas fa-folder-plus"></i>
+                    New Section
+                </button>
+            </div>
+            
+            <div class="sections-container">
+                <div class="sections-header">
+                    <span>Sections</span>
+                    <span class="section-count" id="sectionCount">0</span>
+                </div>
+                <div id="sectionsList" class="sections-list"></div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <button onclick="exportData()" class="footer-btn">
+                    <i class="fas fa-download"></i>
+                    Export
+                </button>
+                <button onclick="importData()" class="footer-btn">
+                    <i class="fas fa-upload"></i>
+                    Import
+                </button>
+            </div>
+        </aside>
+
+        <!-- Notes Grid -->
+        <main class="main">
+            <div class="notes-header">
+                <div class="header-left">
+                    <h2 id="currentSectionTitle">
+                        <i class="fas fa-folder-open"></i>
+                        <span>All Notes</span>
+                    </h2>
+                    <span class="note-count" id="noteCount">0 notes</span>
+                </div>
+                <div class="header-actions">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="new-note-btn" onclick="addNote()" id="addNoteBtn">
+                        <i class="fas fa-plus"></i>
+                        New Note
+                    </button>
+                </div>
+            </div>
+
+            <div id="notesGrid" class="notes-grid"></div>
+        </main>
+
+        <!-- Note Editor Modal -->
+        <div id="editorModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">
+                        <i class="fas fa-pencil-alt"></i>
+                        <input 
+                            type="text" 
+                            id="noteTitle" 
+                            placeholder="Note title..."
+                            class="modal-title-input"
+                            autocomplete="off"
+                        >
+                    </div>
+                    <div class="modal-actions">
+                        <button onclick="insertCodeBlock()" class="modal-btn" title="Insert Code">
+                            <i class="fas fa-code"></i>
+                        </button>
+                        <button onclick="insertImage()" class="modal-btn" title="Insert Image">
+                            <i class="fas fa-image"></i>
+                        </button>
+                        <button onclick="insertLink()" class="modal-btn" title="Insert Link">
+                            <i class="fas fa-link"></i>
+                        </button>
+                        <div class="divider"></div>
+                        <button onclick="saveCurrentNote()" class="modal-btn primary">
+                            <i class="fas fa-check"></i>
+                            Save
+                        </button>
+                        <button onclick="closeEditor()" class="modal-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="modal-editor">
+                    <div id="noteContent" class="editor-content" contenteditable="true"></div>
+                </div>
+                
+                <div class="modal-footer">
+                    <div class="note-meta" id="noteMeta">
+                        <span><i class="far fa-clock"></i> <span id="lastEdited">Just now</span></span>
+                    </div>
+                    <div class="footer-actions">
+                        <button onclick="deleteCurrentNote()" class="delete-btn">
+                            <i class="fas fa-trash-alt"></i>
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
