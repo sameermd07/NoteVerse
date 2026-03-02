@@ -1,47 +1,44 @@
-#🚀 Noteflow – Modern Note Taking App
+🚀 Noteflow – Modern Note-Taking Web App
 
-A sleek, minimal, and powerful note-taking web application built using HTML, CSS, and Vanilla JavaScript.
+A fully responsive and feature-rich note-taking web application built using HTML, CSS, and Vanilla JavaScript.
+Noteflow allows users to organize notes into sections, write rich-text content, insert code snippets, and store everything locally in the browser.
 
-Noteflow helps you organize your thoughts with sections, rich-text notes, code snippets, and local storage persistence — all inside a modern dark UI.
+✨ Features
 
-#✨ Features
+📁 Section-based organization
 
-📁 Create & manage custom sections
+📝 Create, edit, and delete notes
 
-📝 Add, edit, and delete notes
+🎨 Rich text editor (contenteditable)
 
-🎨 Rich text editing (HTML-based contenteditable editor)
-
-💻 Insert syntax-highlighted code blocks
+💻 Syntax-highlighted code blocks
 
 🖼 Insert images via URL
 
-🔗 Insert clickable links
+🔗 Add clickable links
 
-💾 Auto-save using LocalStorage
+💾 LocalStorage data persistence
 
-📤 Export notes as JSON backup
+📤 Export notes as JSON
 
-📥 Import notes from JSON file
+📥 Import notes from JSON backup
 
-⌨ Keyboard shortcuts (Ctrl+S, Ctrl+N, Esc)
+⌨ Keyboard shortcuts support
 
 🌙 Modern dark-themed UI
 
-📱 Responsive layout
+📱 Fully responsive design
 
-#🛠 Tech Stack
+🛠 Tech Stack
 
 HTML5
 
-CSS3 (Custom Variables + Modern Layouts)
+CSS3 (Flexbox + Custom Properties)
 
-Vanilla JavaScript (No frameworks)
+Vanilla JavaScript (ES6+)
 
 LocalStorage API
 
-Highlight.js (Code syntax highlighting)
+Highlight.js
 
-Font Awesome (Icons)
-
-Google Fonts (Inter)
+Font Awesome
